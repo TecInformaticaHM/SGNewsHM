@@ -1,0 +1,71 @@
+﻿    <div ng-app="myApp" class="main">
+    <div ng-controller="crudController">
+        <h1>{{titulo}}</h1>
+
+        <form>
+            <div class="form-group">
+                <!-- <label>
+                    Nome: <br> <input type="text" name="txtNome" ng-model="txtNome"  id="txtNome">
+                </label><br> -->
+                <label for="txtNome">Nome</label>
+                <input type="text" class="form-control" name="txtNome" id="txtNome" ng-model="txtNome" placeholder="Nome">
+            </div>
+
+            <div class="form-group">
+                <!-- <label>
+                    Nome: <br> <input type="text" name="txtNome" ng-model="txtNome"  id="txtNome">
+                </label><br> -->
+                <label for="txtResumo">Resumo</label><br />
+                <textarea rows="4" cols="54" name="txtResumo" ng-model="txtResumo" id="txtResumo" placeholder="Resumo"></textarea>
+            </div>
+
+            <br>
+            <button type="button" ng-click="addLivro()" class="btn btn-success">Adicionar</button>
+            <button type="button" ng-click="edit()" class="btn btn-primary">Editar</button>
+            <button type="button" ng-click="excluir()" class="btn btn-danger">Excluir</button>
+
+        </form>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>Lista de Livros</h3>
+        <div class="listaLivro">
+            <table class="table" id="tbLivro" ng-show="tbLivros.length > 0">
+                <!-- tabela -->
+                <tr>
+                    <!-- linha -->
+
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th> <!-- celula 0 -->
+                    <th scope="col">Resumo</th> <!-- celula 1 -->
+
+                </tr>
+
+                <tr ng-click="selecionarItem(livro, $index)" ng-repeat="livro in tbLivros">
+                    <td scope="row">{{$index + 1}}</td>
+                    <td scope="row">{{livro.nome}}</td>
+                    <td scope="row">{{livro.resumo}}</td>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total: {{tbLivros.length}}</td>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+            <div ng-show="tbLivros.length == 0" class="alert alert-danger" role="alert">
+                Nenhum livro adicionado.
+            </div>
+        </div>
+
+    </div>
+</div>
+    <style type="text/css">
+        .main {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
