@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace SGL.Models
 {
+    [Table("Noticia")]
     public class Noticia
     {
         public long NoticiaId { get; set; }

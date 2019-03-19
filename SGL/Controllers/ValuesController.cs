@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,10 +10,12 @@ namespace SGL.Controllers
 {
     public class ValuesController : ApiController
     {
+        private readonly NewsHMContext _context = new NewsHMContext();
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<Noticia> Get()
         {
-            return new string[] { "value1", "value2", "pacó" };
+           return _context.Noticias.ToList();
+            //return new string[] { "value1", "value2", "pacó" };
         }
 
         // GET api/values/5

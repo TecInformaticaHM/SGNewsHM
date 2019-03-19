@@ -214,6 +214,7 @@
     </Compile>
     <Compile Include="Models\Arquivos.cs" />
     <Compile Include="Models\Livro.cs" />
+    <Compile Include="Models\NewsHMContext.cs" />
     <Compile Include="Models\Noticia.cs" />
     <Compile Include="Models\TipoNoticia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
