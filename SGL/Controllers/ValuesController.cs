@@ -10,11 +10,30 @@ namespace SGL.Controllers
 {
     public class ValuesController : ApiController
     {
+        
         private readonly NewsHMContext _context = new NewsHMContext();
         // GET api/values
-        public IEnumerable<Noticia> Get()
+        public IEnumerable<object> Get()
         {
-           return _context.Noticias.ToList();
+            try
+            {
+                //var noticias = _context.Noticias.ToList();
+                var noticias = (from n in _context.Noticias
+                                select new
+                                {
+                                    n.NoticiaId,
+                                    n.Titulo,
+                                    n.TipoNoticia.Descricao
+                                }).ToList();
+
+                return noticias;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
             //return new string[] { "value1", "value2", "pacó" };
         }
 
