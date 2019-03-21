@@ -211,6 +211,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LivroController.cs" />
+    <Compile Include="Controllers\NoticiasController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -228,9 +229,37 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Layout\ie\html5shiv.js" />
+    <Content Include="Content\Layout\ie\PIE.htc" />
+    <Content Include="Content\Layout\ie\v8.css" />
+    <Content Include="Content\Layout\ie\v9.css" />
+    <Content Include="Content\Layout\images\mobileUI-site-nav-opener-bg.svg" />
+    <Content Include="Content\Layout\images\toggle.svg" />
+    <Content Include="Content\Layout\skel-noscript.css" />
+    <Content Include="Content\Layout\style-1000px.css" />
+    <Content Include="Content\Layout\style-desktop.css" />
+    <Content Include="Content\Layout\style-mobile.css" />
+    <Content Include="Content\Layout\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\banner.jpg" />
+    <Content Include="Images\comida.jpg" />
+    <Content Include="Images\futebol.jpg" />
+    <Content Include="Images\pic01.jpg" />
+    <Content Include="Images\pic02.jpg" />
+    <Content Include="Images\pic03.jpg" />
+    <Content Include="Images\pic04.jpg" />
+    <Content Include="Images\pic05.jpg" />
+    <Content Include="Images\pic06.jpg" />
+    <Content Include="Images\pic07.jpg" />
+    <Content Include="Images\pics01.jpg" />
+    <Content Include="Images\pics02.png" />
+    <Content Include="Images\pics03.png" />
+    <Content Include="Images\pics04.png" />
+    <Content Include="Images\pics05.jpg" />
+    <Content Include="Images\pics06.jpg" />
+    <Content Include="Images\pics07.jpg" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -1039,6 +1068,10 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\sitemap.xml" />
+    <Content Include="Scripts\Site\Layout\html5shiv.js" />
+    <Content Include="Scripts\Site\Layout\init.js" />
+    <Content Include="Scripts\Site\Layout\skel-panels.min.js" />
+    <Content Include="Scripts\Site\Layout\skel.min.js" />
     <Content Include="Scripts\Site\myApp.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1053,9 +1086,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutOriginal.cshtml" />
     <Content Include="Views\Home\crudLivros.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Noticias\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

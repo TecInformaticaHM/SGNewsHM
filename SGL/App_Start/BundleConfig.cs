@@ -30,6 +30,17 @@ namespace SGL
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/layout/css").Include(
+                "~/Content/Layout/skel-noscript.css",
+                "~/Content/Layout/style.css",
+                "~/Content/Layout/style-desktop.css"
+                )) ;
+            bundles.Add(new ScriptBundle("~/bundles/app/layout").Include(
+                "~/Scripts/Site/Layout/skel.min.js",
+                "~/Scripts/Site/Layout/skel-panels.min.js",
+                "~/Scripts/Site/Layout/init.js"
+                ));
         }
     }
 }
