@@ -13,5 +13,9 @@ namespace SGL.Controllers
         {
             return View();
         }
+        public ActionResult AllNews()
+        {
+            return View();
+        }
     }
 }

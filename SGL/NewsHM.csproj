@@ -1091,6 +1091,7 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Noticias\Index.cshtml" />
+    <Content Include="Views\Noticias\AllNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

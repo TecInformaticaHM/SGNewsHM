@@ -26,9 +26,14 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    <li class="active"><a href="index.html">Home page</a></li>
+                    <li class="active">
+                        @Html.ActionLink("Home", "Index", "Noticias", new { area = "" }, null)
+                    </li>
                     <li><a href="left-sidebar.html">Cursos</a></li>
-                    <li><a href="right-sidebar.html">Todas as notícias</a></li>
+                    <li>
+                      
+                        @Html.ActionLink("Todas as notícias", "AllNews", "Noticias", new { area = "" }, null)
+                    </li>
                     <li><a href="no-sidebar.html">Contato</a></li>
                 </ul>
             </nav>
