@@ -12,7 +12,11 @@
     @Styles.Render("~/Content/layout/css")
 
 
-
+    <style>
+        .titulo {
+            font-size: 1.4em !important;
+        }
+    </style>
 </head>
 <body class="homepage">
 
@@ -28,15 +32,42 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    <li class="active">
+                    @*<li>
                         @Html.ActionLink("Home", "Index", "Noticias", new { area = "" }, null)
                     </li>
                     <li><a href="left-sidebar.html">Cursos</a></li>
                     <li>
-                      
+
                         @Html.ActionLink("Todas as notícias", "AllNews", "Noticias", new { area = "" }, null)
-                    </li>
-                    <li><a href="no-sidebar.html">Contato</a></li>
+                    </li>*@
+
+                    @if (ViewBag.menu == "home")
+                    {
+                    <li class="active">@Html.ActionLink("Home", "Index", "Noticias", new { area = "" }, null)</li>
+                    }
+                    else
+                    {
+                    <li>@Html.ActionLink("Home", "Index", "Noticias", new { area = "" }, null)</li>
+                    }
+
+                    @if (ViewBag.menu == "allnews")
+                    {
+                        <li class="active">@Html.ActionLink("Todas as notícias", "AllNews", "Noticias", new { area = "" }, null)</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Todas as notícias", "AllNews", "Noticias", new { area = "" }, null)</li>
+                    }
+
+                    @if (ViewBag.menu == "contatos")
+                    {
+                        <li class="active">@Html.ActionLink("Contatos", "Contatos", "Noticias", new { area = "" }, null)</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Contatos", "Contatos", "Noticias", new { area = "" }, null)</li>
+                    }
+
                 </ul>
             </nav>
         </div>
@@ -96,7 +127,7 @@
     <!-- Copyright -->
     <div id="copyright">
         <div class="container">
-            Desenvolvido por: <a href="http://templated.co">Turma XXXX</a>
+            Desenvolvido por: @Html.ActionLink("Alunos", "Alunos", "Noticias", new { area = "" }, null)
         </div>
     </div>
 

@@ -11,11 +11,32 @@ namespace SGL.Controllers
         // GET: Noticias
         public ActionResult Index()
         {
+            ViewBag.menu = "home";
             return View();
         }
         public ActionResult AllNews()
         {
+            ViewBag.menu = "allnews";
             return View();
         }
+
+        //GET:Contatos
+        public ActionResult Contatos()
+        {
+            ViewBag.menu = "contatos";
+            return View();
+        }
+
+
+        // GET: Noticias
+        public ActionResult Alunos()
+        {
+            ViewBag.menu = "alunos";
+            return View();
+        }
+
+
+
+
     }
 }

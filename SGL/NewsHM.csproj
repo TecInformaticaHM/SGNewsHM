@@ -1092,6 +1092,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Noticias\Index.cshtml" />
     <Content Include="Views\Noticias\AllNews.cshtml" />
+    <Content Include="Views\Noticias\Contatos.cshtml" />
+    <Content Include="Views\Noticias\Alunos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
