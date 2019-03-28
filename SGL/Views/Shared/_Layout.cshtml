@@ -8,6 +8,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     @*@Scripts.Render("~/bundles/jquery")*@
+    
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
     @Scripts.Render("~/bundles/app/layout")
     @Styles.Render("~/Content/layout/css")
 
@@ -32,24 +35,17 @@
             <!-- Nav -->
             <nav id="nav">
                 <ul>
-                    @*<li>
-                        @Html.ActionLink("Home", "Index", "Noticias", new { area = "" }, null)
-                    </li>
-                    <li><a href="left-sidebar.html">Cursos</a></li>
-                    <li>
-
-                        @Html.ActionLink("Todas as notícias", "AllNews", "Noticias", new { area = "" }, null)
-                    </li>*@
-
+                    <!--HOME-->
                     @if (ViewBag.menu == "home")
                     {
-                    <li class="active">@Html.ActionLink("Home", "Index", "Noticias", new { area = "" }, null)</li>
+                        <li class="active">@Html.ActionLink("Home", "Index", "Noticias", new { area = "" }, null)</li>
                     }
                     else
                     {
-                    <li>@Html.ActionLink("Home", "Index", "Noticias", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("Home", "Index", "Noticias", new { area = "" }, null)</li>
                     }
 
+                    <!--ALLNEWS-->
                     @if (ViewBag.menu == "allnews")
                     {
                         <li class="active">@Html.ActionLink("Todas as notícias", "AllNews", "Noticias", new { area = "" }, null)</li>
@@ -59,6 +55,7 @@
                         <li>@Html.ActionLink("Todas as notícias", "AllNews", "Noticias", new { area = "" }, null)</li>
                     }
 
+                    <!--CONTATOS-->
                     @if (ViewBag.menu == "contatos")
                     {
                         <li class="active">@Html.ActionLink("Contatos", "Contatos", "Noticias", new { area = "" }, null)</li>

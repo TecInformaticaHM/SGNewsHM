@@ -103,6 +103,21 @@ myApp.controller('crudController', ['$scope', '$http', function ($scope, $http) 
         });
     }
 
-    $scope.obterLivros();
+    $scope.obterNoticias = function () {
+
+        $http.get('api/Values/Get').then(function (response) {
+
+            debugger;
+            // deu certo
+            $scope.tbNoticias = response.data;
+            console.log(response);
+
+        }, function (response) {
+            // ocorreu algum erro
+            console.log(response);
+        });
+    }
+
+    $scope.obterNoticias();
 
 }]);
