@@ -15,6 +15,6 @@ namespace SGL.Models
 
         public DbSet<Noticia> Noticias { get; set; }
         public DbSet<TipoNoticia> TipoNoticia { get; set; }
-        public DbSet<Arquivos> Arquivos { get; set; }
+        //public DbSet<Arquivos> Arquivos { get; set; }
     }
 }

@@ -3,22 +3,20 @@
     ViewBag.Title = "Noticias";
 }
 
-<div class="row">
+<div class="row" ng-controller="home">
 
     <!-- Content -->
     <div id="content" class="8u skel-cell-important">
         <section>
             <header>
-                <h2>Novo Portal de Notícias!</h2>
-                <span class="byline">Escola Estadual Hércules Maymone inova e disponibiliza portal de notícias à comunidade escolar.</span>
+                <h2 style="font-size: 2.5em !important;">{{noticiaPrincipal.titulo}}</h2>
+                <span class="byline">{{noticiaPrincipal.subtitulo}}</span>
             </header>
             <a href="#" class="image full"><img src="images/pic07.jpg" alt="" /></a>
             <p>
-                Escola Estadual Hércules Maymone disponibiliza portal de notícias à comunidade escolar. O objetivo do portal é estreitar a comunicação com informações de interesse de toda a comunidade.
+                {{noticiaPrincipal.resumo}}
             </p>
-            <p>
-                O portal é um projeto de conclusão do Curso Técno em Informática e foi desenvolvido pela turma...
-            </p>
+            
             <p><a href="#" class="button">Continuar Lendo</a></p>
         </section>
     </div>

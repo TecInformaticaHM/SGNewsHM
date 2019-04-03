@@ -5,32 +5,17 @@
 
 
 <br />
-<div class="row">
+<div class="row" ng-controller="noticias">
     <div id="sidebar" class="12u">
         <section>
             <header>
-                <h2>AllNews</h2>
+                <h2>Todas as Notícias</h2>
             </header>
             <ul class="style">
-                <li>
+                <li ng-repeat="noticia in tbNoticias">
                     <p class="posted">August 11, 2002  |  (10 )  Comments</p>
                     <img src="~/Images/pic04.jpg" alt="" />
-                    <p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
-                </li>
-                <li>
-                    <p class="posted">August 11, 2002  |  (10 )  Comments</p>
-                    <img src="~/Images/pic05.jpg" alt="" />
-                    <p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
-                </li>
-                <li>
-                    <p class="posted">August 11, 2002  |  (10 )  Comments</p>
-                    <img src="~/Images/pic06.jpg" alt="" />
-                    <p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
-                </li>
-                <li>
-                    <p class="posted">August 11, 2002  |  (10 )  Comments</p>
-                    <img src="~/Images/pic05.jpg" alt="" />
-                    <p class="text">Nullam non wisi a sem eleifend. Donec mattis libero eget urna. Pellentesque viverra enim.</p>
+                    <p class="text">{{noticia.titulo}}</p>
                 </li>
             </ul>
         </section>
@@ -39,7 +24,7 @@
 
 <script>
     function ajusteheader() {
-        debugger;
+        
         var header = document.getElementById('header');
         header.style.height = "250px;";
     }
