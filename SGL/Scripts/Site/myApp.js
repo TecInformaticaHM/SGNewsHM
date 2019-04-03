@@ -121,3 +121,46 @@ myApp.controller('crudController', ['$scope', '$http', function ($scope, $http) 
     $scope.obterNoticias();
 
 }]);
+
+
+myApp.controller('home', ['$scope', '$http', function ($scope, $http) {
+    
+    $scope.obterNoticiaPrincipal = function () {
+
+        $http.get('http://localhost:55475/api/NoticiasApi/ObterNoticiaPrincipal').then(function (response) {
+
+            debugger;
+            // deu certo
+            $scope.noticiaPrincipal = response.data;
+
+
+        }, function (response) {
+            // ocorreu algum erro
+            console.log(response);
+        });
+    }
+
+    $scope.obterNoticiaPrincipal();
+
+
+}]);
+
+myApp.controller('noticias', ['$scope', '$http', function ($scope, $http) {
+    $scope.obterNoticias = function () {
+
+        $http.get('http://localhost:55475/api/NoticiasApi/ObterNoticias').then(function (response) {
+
+            debugger;
+            // deu certo
+            $scope.tbNoticias = response.data;
+            
+
+        }, function (response) {
+            // ocorreu algum erro
+            console.log(response);
+        });
+    }
+
+    $scope.obterNoticias();
+
+}]);

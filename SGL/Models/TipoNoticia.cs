@@ -11,7 +11,7 @@ namespace SGL.Models
     public class TipoNoticia
     {
         [Key]
-        public long TipoNoticiaId { get; set; }
+        public int TipoNoticiaId { get; set; }
         public string Descricao { get; set; }
     }
 }

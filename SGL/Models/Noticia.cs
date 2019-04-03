@@ -7,11 +7,11 @@ using System.Web;
 
 namespace SGL.Models
 {
-    [Table("Noticia")]
+    [Table("Noticias")]
     public class Noticia
     {
         [Key]
-        public long NoticiaId { get; set; }
+        public int NoticiaId { get; set; }
         [ForeignKey("TipoNoticia")]
         public int TipoNoticiaId { get; set; }
         public DateTime DataInclusao { get; set; }
