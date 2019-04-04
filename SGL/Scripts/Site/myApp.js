@@ -1,5 +1,46 @@
 var myApp = angular.module('myApp', []);
 
+// CONFIGURAÇÃO ROTAS
+app.config(function ($routeProvider, $locationProvider) {
+    // remove o # da url
+    $locationProvider.html5Mode(true);
+
+    var baseUrl = 'http://localhost:55475/Noticias/';
+
+    $routeProvider
+
+        .when('/', {
+            templateUrl: baseUrl + 'Index',
+            controller: 'homeCtrl'
+        })
+        // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
+        //.when('/', {
+        //    templateUrl: 'app/views/home.html',
+        //    controller: 'HomeCtrl',
+        //})
+
+        // para a rota '/sobre', carregaremos o template sobre.html e o controller 'SobreCtrl'
+        .when('/allnews', {
+            templateUrl: baseUrl + 'AllNews',
+            controller: 'noticiasCtrl',
+        })
+
+        // para a rota '/contato', carregaremos o template contato.html e o controller 'ContatoCtrl'
+        .when('/contato', {
+            templateUrl: baseUrl + 'Contatos',
+            controller: '',
+        })
+
+        .when('/detalheNoticia', {
+            templateUrl: baseUrl + 'DetalhesNoticia',
+            controller: 'detalhesNoticiaCtrl',
+        })
+
+        // caso não seja nenhum desses, redirecione para a rota '/'
+        .otherwise({ redirectTo: '/' });
+});
+
+// CONTROLLERS
 myApp.controller('crudController', ['$scope', '$http', function ($scope, $http) {
 
     $scope.titulo = 'MY APP';
@@ -123,7 +164,7 @@ myApp.controller('crudController', ['$scope', '$http', function ($scope, $http) 
 }]);
 
 
-myApp.controller('home', ['$scope', '$http', function ($scope, $http) {
+myApp.controller('homeCtrl', ['$scope', '$http', function ($scope, $http) {
     
     $scope.obterNoticiaPrincipal = function () {
 
@@ -145,7 +186,7 @@ myApp.controller('home', ['$scope', '$http', function ($scope, $http) {
 
 }]);
 
-myApp.controller('noticias', ['$scope', '$http', function ($scope, $http) {
+myApp.controller('noticiasCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.obterNoticias = function () {
 
         $http.get('http://localhost:55475/api/NoticiasApi/ObterNoticias').then(function (response) {
@@ -162,5 +203,24 @@ myApp.controller('noticias', ['$scope', '$http', function ($scope, $http) {
     }
 
     $scope.obterNoticias();
+
+}]);
+
+myApp.controller('detalhesNoticiaCtrl', ['$scope', '$http', function ($scope, $http) {
+    $scope.obterNoticiaSelecionada = function () {
+        debugger;
+        var noticiaId = $scope.$parent.noticiaId;
+        $http.get('http://localhost:55475/api/NoticiasApi/ObterNoticiaSelecionada', { params:{ noticiaId: noticiaId } }).then(function (response) {
+
+            debugger;
+            // deu certo
+            $scope.noticia = response.data;
+        }, function (response) {
+            // ocorreu algum erro
+            console.log(response);
+        });
+    }
+
+    $scope.obterNoticiaSelecionada();
 
 }]);

@@ -12,13 +12,13 @@ namespace SGL.Controllers
     {
         
         private readonly NewsHMContext _context = new NewsHMContext();
-        // GET api/values
+        
         [HttpGet]
         public IEnumerable<object> ObterNoticias()
         {
             try
             {
-                //var noticias = _context.Noticias.ToList();
+                
                 var noticias = (from n in _context.Noticias
                                 select new
                                 {
@@ -40,7 +40,6 @@ namespace SGL.Controllers
                 throw ex;
             }
            
-            //return new string[] { "value1", "value2", "pacó" };
         }
 
         [HttpGet]
@@ -71,7 +70,36 @@ namespace SGL.Controllers
                 throw ex;
             }
 
-            //return new string[] { "value1", "value2", "pacó" };
+        }
+
+        [HttpGet]
+        public object ObterNoticiaSelecionada(int noticiaId)
+        {
+            try
+            {
+
+                var noticia = (from n in _context.Noticias
+                               where n.noticiaId == noticiaId
+                               select new
+                               {
+                                   n.NoticiaId,
+                                   n.Titulo,
+                                   n.Subtitulo,
+                                   n.Resumo,
+                                   n.Descricao,
+                                   n.Datainicioexibicao
+                               }).SingleOrDefault();
+
+
+
+                return noticia;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
     }

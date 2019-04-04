@@ -35,7 +35,11 @@ namespace SGL.Controllers
             return View();
         }
 
-
+        public ActionResult DetalhesNoticia()
+        {
+            ViewBag.menu = "home";
+            return View();
+        }
 
 
     }
